@@ -11,7 +11,7 @@
 // Parameters // N
 // Return // an array with n-1 length
 // Example arr(5) // => [0,1,2,3,4]
-// psuedo code
+// Psuedo code
 // // (x) take in the value of N
 ///// (x) produce the numbers between 0 and n-1
 ///// (x) insert the numbers into an array called array
