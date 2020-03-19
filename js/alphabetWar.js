@@ -32,19 +32,36 @@
 // take the value string and replace them with values
 // sum up those values
 function alphabetWar (fight){
-  const leftCount  = {
-    w :4,
-    p:3,
-    b:2,
-    s:1
-  }
-  const rightCount == {
-    m :4,
-    q:3,
-    d:2,
-    z:1
-  }
-  let stringSpilt = fight.split('');
-  let
+  let checkStr =fight.split('');
+  let rightSide = 0;
+  let leftSide = 0;
+// assuming fight is only for string cases
+  for(let i=0; i <= checkStr.length; i++){
+    let letter = checkStr[i]
+    if (letter === "m"){
+      rightSide +=4;
+    } else if (letter === "q"){
+      rightSide+=3;
+    } else if (letter === "d"){
+      rightSide+=2;
+    } else if (letter === "z"){
+      rightSide+=1;
+    }  else if (letter === "w"){
+      leftSide+=4;
+    }else if (letter === "p"){
+      leftSide+=3;
+    }else if (letter === "b"){
+      leftSide+=2;
+    }else if (letter === "s"){
+      leftSide+=1;
+    }
+    }
 
-}
+    if (rightSide > leftSide){
+      return "Right side wins !"
+    } else if (rightSide < leftSide){
+      return "Left side wins !"
+    } else {
+      return "Let's fight again !"
+    }
+  }
