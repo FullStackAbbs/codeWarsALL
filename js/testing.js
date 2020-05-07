@@ -1,45 +1,22 @@
-var express  = require('express');
+// PREP
+https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd/train/javascript
 
-let coinA = [['quarter',1996],['nickel',1996],['quarter',1993]]
-let coinB = [['quarter',1995],['nickel',1996],['quarter',1993]]
-let coinC = [['quarter',1995],['nickel',1996],['nickel',1993],['quarter',1993]];
-let coinD = [['quarter',1994],['nickel',1996],['nickel',1993],['quarter',1993]];
+// LEARNING MOMENENT: Test.assertEqual allows us to check our own test. true vs is this actually true aganist my derived function
+// Parameters: Pages and Students
+// Return: How many pages do we need ?
+// Example: 5 students 5 pages. 25 overall pages needed
+// PsuedoCode: take in the students and pages
 
-
-// console.log(coinA[1][1])
-
-function sameORnah([listA],[listB]){
-  let quaListA =[];
-  let quaListB =[];
-  for (let coin of listA){
-    if(coin[0] === 'quarter'){
-      quaListA.push(coin)
-    }
+var m = 0;
+var n = 0;
+function blankPages(m,n){
+  if(m||n <= 0){
+    console.log('No papers are needed')
+  } else {
+    blankPagesNeeded = m*n;
+    console.log('The class needs at least ${blankPagesNeeded}');
   }
-  for (let coin of listB){
-    if(coin[0] === 'quarter'){
-      quaListB.push(coin)
-    }
-  }
-  function comparisonQUA(){
-   for(var i=0;i<quaListA.length;i++){
-     if (quaListA[i][1] === quaListB[i][1]){
-       console.log('true')
-     }
-     if (quaListA[i][1] != quaListB[i][1]){
-       console.log('false')
-     }
-   }
-  }
-    comparisonQUA(quaListA,quaListB);
-      // console.log(quaListA)
-      // console.log(quaListB)
-  }
-
-sameORnah([coinC],[coinD])
-
-
-
+}
 
 
 // node testing.js
