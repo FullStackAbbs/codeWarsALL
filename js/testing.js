@@ -1,22 +1,51 @@
-// PREP
-https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd/train/javascript
+// The goal of this exercise is to convert a string to a new string where each character in the
+// new string is "(" if that character appears only once in the original string, or ")" if that character
+// appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+//
+// Examples
+// "din"      =>  "((("
+// "recede"   =>  "()()()"
+// "Success"  =>  ")())())"
+// "(( @"     =>  "))(("
 
-// LEARNING MOMENENT: Test.assertEqual allows us to check our own test. true vs is this actually true aganist my derived function
-// Parameters: Pages and Students
-// Return: How many pages do we need ?
-// Example: 5 students 5 pages. 25 overall pages needed
-// PsuedoCode: take in the students and pages
+// Parameters : a string
+// Return: parathesis
+// Example: "din"      =>  "((("
+//          "recede"   =>  "()()()"
+// Psuedocode:
+// // (a)  loop through the strings, probably a split
+// // (a2) make an empty array called characters
+// // (a3) stored for "d","i","n" letters
+// // (a4) if the letters in the strings is found in the array (another loop interation)
+// // (b)  if the indexOf is -1 then ( if its not then )
+// // (c)
+  let answer = "";
+function parath(input){
 
-var m = 0;
-var n = 0;
-function blankPages(m,n){
-  if(m||n <= 0){
-    console.log('No papers are needed')
-  } else {
-    blankPagesNeeded = m*n;
-    console.log('The class needs at least ${blankPagesNeeded}');
-  }
+  let storChar = ['r'];
+
+  for(let i=0; i<storChar.length;i++){
+    if (input.includes(storChar[i])){
+      console.log('yes')
+    }
+}
+  // let ans = input.includes(storChar[0])
+  // console.log(ans)
+
+// for (let i=0;i < input.length; i++){
+//   if(storChar.indexOf(input[i]) === -1 ){
+//     storChar.push(input[i])
+//     answer += "("
+//     // console.log(storChar)
+//   }
+//   if(storChar.indexOf(input[i]) < 0 ){
+//     console.log(input[i])
+//     // console.log(storChar)
+//   }}
 }
 
 
+
+parath('recede');
+console.log(answer)
 // node testing.js
