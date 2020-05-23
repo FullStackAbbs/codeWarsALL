@@ -63,3 +63,18 @@ var numberOfSteps  = function(num) {
   }
   return count;
 };
+var numberOfSteps  = function(num) {
+  let count = 0;
+    if (num % 2 === 0 && num !== 0) {
+      count++;
+      num = num/2;
+      return function(num)
+    } else if (numv< 0 ) {
+      count++;
+      // if we want the counter to work we need to use count++ AND not count=+
+      num=num-1;
+      
+    }
+
+  return count;
+};

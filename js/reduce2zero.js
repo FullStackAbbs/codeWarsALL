@@ -35,19 +35,39 @@
 //   return count
 //
 // };
-const even = function(){
-  num = num/2
-  count++
-}
-const odd = function(){
-  num = num - 1
-  count++
-}
-function ReduceToZero(num){
-  let count = 0;
-  (num !== 0 && num % 2 === 0 ) ? even() : odd()
-  return ReduceToZero()
+// const even = function(){
+//   num = num/2
+//   count++
+// }
+// const odd = function(){
+//   num = num - 1
+//   count++
+// }
+// function ReduceToZero(num){
+//   let count = 0;
+//   (num !== 0 && num % 2 === 0 ) ? even() : odd()
+//   return ReduceToZero()
+//
+// }
+// console.log(ReduceToZero(14))
 
+function countDown(num) {
+  console.log(num);
+  let count =0;
+    if (num % 2 === 0 && num < 0) {
+      count++
+      num = num /2
+      countDown(num);
+    } else if (num < 0) {
+      count++
+      num = num-1
+      countDown(num);
+    } return count
 }
-console.log(ReduceToZero(14))
+console.log(countDown(14));
 // node reduce2zero.js
+
+var numberOfSteps  = function(num,n=0) { // the parameter taking the number and counter
+    if ( num%2!==0 ) return numberOfSteps(num-=1, n+=1) // of the number is %2, put in the function recurisive of the paramter should be minus 1 if true
+    return num > 1 ? numberOfSteps(num/=2, n+=1) : n // if the first is not activate return the number....
+};
