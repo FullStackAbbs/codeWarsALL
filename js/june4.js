@@ -62,7 +62,9 @@ function bestNonRepeatChar(input){
       obj[letter]=1
     }
   }
+
   let countArr = Object.entries(obj)
+  console.log(countArr)
   const find = countArr.find((el) => {
     if(el[1] === 1){
       return true
