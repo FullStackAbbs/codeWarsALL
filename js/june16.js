@@ -1,23 +1,22 @@
-function largeSum(arr){
+var maxSubArray = function(nums) {
+
+let arr = nums
 let largestIndex=arr[0];
 let secLargestIndex=arr[1];
 arr.forEach((el) => {
-
-// if(el < largestIndex && el > secLargestIndex){
-//   secLargestIndex = el
-//   console.log(`The  second largest index element is ${secLargestIndex}`)
-// }
-if(el > largestIndex && el > secLargestIndex){
-  secLargestIndex = largestIndex
-  largestIndex = el
-
-  console.log(`The largest index element is ${largestIndex} and 2nd largest ${secLargestIndex}`)
-}
-
-
+    if (el > largestIndex){
+        largestIndex = el
+    }
+    if(el > secLargestIndex && el < largestIndex){
+        secLargestIndex = el
+    }
 })
-}
+    return output = largestIndex+ secLargestIndex
 
+};
+
+// figure out outout edgecase length solutions
+// fix function call below
 console.log(largeSum([1,4,9,11,-2,3]))
 
 // lar=0 2ndlar=0
