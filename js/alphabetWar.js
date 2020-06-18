@@ -35,6 +35,7 @@ function alphabetWar (fight){
   let checkStr =fight.split('');
   let rightSide = 0;
   let leftSide = 0;
+  
 // assuming fight is only for string cases
   for(let i=0; i <= checkStr.length; i++){
     let letter = checkStr[i]
