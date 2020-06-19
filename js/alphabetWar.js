@@ -31,38 +31,82 @@
 // seperate every string and "check" if it has any of the values
 // take the value string and replace them with values
 // sum up those values
-function alphabetWar (fight){
-  let checkStr =fight.split('');
-  let rightSide = 0;
-  let leftSide = 0;
-  
-// assuming fight is only for string cases
-  for(let i=0; i <= checkStr.length; i++){
-    let letter = checkStr[i]
-    if (letter === "m"){
-      rightSide +=4;
-    } else if (letter === "q"){
-      rightSide+=3;
-    } else if (letter === "d"){
-      rightSide+=2;
-    } else if (letter === "z"){
-      rightSide+=1;
-    }  else if (letter === "w"){
-      leftSide+=4;
-    }else if (letter === "p"){
-      leftSide+=3;
-    }else if (letter === "b"){
-      leftSide+=2;
-    }else if (letter === "s"){
-      leftSide+=1;
-    }
-    }
+// function alphabetWar (fight){
+//   let checkStr =fight.split('');
+//   let rightSide = 0;
+//   let leftSide = 0;
+//
+// // assuming fight is only for string cases
+//   for(let i=0; i <= checkStr.length; i++){
+//     let letter = checkStr[i]
+//     if (letter === "m"){
+//       rightSide +=4;
+//     } else if (letter === "q"){
+//       rightSide+=3;
+//     } else if (letter === "d"){
+//       rightSide+=2;
+//     } else if (letter === "z"){
+//       rightSide+=1;
+//     }  else if (letter === "w"){
+//       leftSide+=4;
+//     }else if (letter === "p"){
+//       leftSide+=3;
+//     }else if (letter === "b"){
+//       leftSide+=2;
+//     }else if (letter === "s"){
+//       leftSide+=1;
+//     }
+//     }
+//
+//     if (rightSide > leftSide){
+//       return "Right side wins !"
+//     } else if (rightSide < leftSide){
+//       return "Left side wins !"
+//     } else {
+//       return "Let's fight again !"
+//     }
+//   }
 
-    if (rightSide > leftSide){
-      return "Right side wins !"
-    } else if (rightSide < leftSide){
-      return "Left side wins !"
-    } else {
-      return "Let's fight again !"
-    }
+
+
+const leftSide = {
+  "w":4,
+  "p":3,
+  "b":2,
+  "s":1,
+}
+const rightSide={
+  "q":4,
+  "d":3,
+  "z":2,
+  "w":1,
+}
+
+let check = Object.entries(leftSide);
+let leftKeys = Object.keys(leftSide);
+let leftValues = Object.values(leftSide);
+let string='abbey'
+function char_count(str, letter)
+{
+ var letter_Count = 0;
+ for (var position = 0; position < str.length; position++)
+ {
+    if (str.charAt(position) == letter)
+      {
+      letter_Count += 1;
+      }
   }
+  return letter_Count;
+}
+console.log(char_count('abbey',leftKeys[2]))
+// Parameter a string of letters
+// Return "Left/Side won or tie based on the count of sides"
+// Example
+// PsuedoCode
+// create a countrutor function where something call this.count=
+// start a count for the right side;
+// iterate through the string and check if it has el[0]
+// add count el[1]
+//
+
+// node alphabetWar.js
