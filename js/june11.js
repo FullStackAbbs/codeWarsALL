@@ -33,7 +33,7 @@
 
 function removeDupArr(arr){
   let me = new Set(arr)
-  let output= Object.values(me)
+  let output= Array.from(me)
   return output
 }
 
