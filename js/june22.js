@@ -29,6 +29,8 @@ function findVowels(input){
 numberOutput(vowelCollection)
 }
 
+
+
 function numberOutput(input2){
   let charVal ={
     a:1,
@@ -38,7 +40,7 @@ function numberOutput(input2){
     y:7
   }
   let sumArr=[]
-  let 
+  let
   let letters = Object.keys(charVal);
   let values = Object.values(charVal);
 let filteredNumbers = letters.map((letters,values) => {
