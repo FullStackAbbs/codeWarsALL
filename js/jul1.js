@@ -1,9 +1,8 @@
-function getSumOfDigits(integer) {
+function getSumOfDigits(num) {
     var sum = 0;
-    console.log(integer);
-    var digits =  Math.floor(integer).toString();
-    for(var i = 0; i < digits.length; i ++) {
-      sum += parseInt(digits[i]);
+    var numbers =  Math.floor(num).toString();
+    for(var i = 0; i < numbers.length; i ++) {
+      sum += parseInt(numbers[i]);
     }
     return(sum)
     }
