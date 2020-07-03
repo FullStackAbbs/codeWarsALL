@@ -1,4 +1,3 @@
-// Life Path Calc for M.R.
 
 let negCount=0;
 function countNegatives(grid){
