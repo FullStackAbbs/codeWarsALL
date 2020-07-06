@@ -14,11 +14,15 @@
 # check how many time the element appears
 # if the element appears more the once:
 ## add the element to the output list
-output=[]
+alreadyHere=[]
+help=set()
 def duplicates(array):
     for element in array:
-        if array.count(element) > 1 and element not in output:
-            output.append(element)
+        if element not in alreadyHere:
+            alreadyHere.append(element)
+        else:
+            help.add(element)
+    output =list(help)
     return output
 res = duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3, '5'])
 print(res)
