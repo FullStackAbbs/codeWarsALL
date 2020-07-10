@@ -2,18 +2,18 @@
 # Calculate Life Path from dates
 # edgecase, for 11,22,33
 def sumMoreThan10(num):
-    if(num>9): #add master number edgecases
+    if(num>9):
         count=0
         stringNum = str(num)
         for el in stringNum:
             newAdd = int(el)
             count = count + newAdd
-    if(count>9):
+    if(count>9 and not 0):
         sumMoreThan10(count)
     else:
         print(count)
-res = sumMoreThan10('1977')
-print(res)
+sumMoreThan10('1977')
+
 # python jul8.py
 # take in the number
 # change the number to string
