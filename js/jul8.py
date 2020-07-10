@@ -3,18 +3,15 @@
 # edgecase, for 11,22,33
 def sumMoreThan10(num):
     if(num>9): #add master number edgecases
-        newNum=0
-        love=0
+        count=0
         stringNum = str(num)
-        addList=[]
         for el in stringNum:
             newAdd = int(el)
-            addList.append(newAdd)
-        newNum = sum(addList)
-    if(newNum>9):
-        sumMoreThan10(newNum)
+            count = count + newAdd
+    if(count>9):
+        sumMoreThan10(count)
     else:
-        print(newNum)
+        print(count)
 res = sumMoreThan10('1977')
 print(res)
 # python jul8.py
