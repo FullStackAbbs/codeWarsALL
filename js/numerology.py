@@ -39,6 +39,10 @@ pyAlphabetVowel={
     'o':6,
     'u':3
 }
+fakeSoul=[]
+care=0
+
+def help()
 def soulNumber(string):
     str=string.lower()
     soulNumberCount=0
@@ -53,10 +57,24 @@ def soulNumber(string):
             if letter == vowel:
                 middy=count*value
                 soulNumberCount = soulNumberCount + middy
-    def digital_root(n):
-        return n%9 or n and 9
-    digital_root(soulNumberCount)
-
+                fakeSoul.append(soulNumberCount)
+    length =len(fakeSoul)-1
+    care=fakeSoul[2]
+    def reduceNum(care):
+        return care
+    #     # strNum=str(num)
+    #     # sum=0
+    #     # if n>9:
+    #     #     for digit in strNum:
+    #     #         num = int(digit)
+    #     #         sum = sum + num
+    #     # if n<9:
+    #     #     return n
+    #     # if sum > 9 and sum > 0 and sum != 11 and sum != 22 and sum !=33:
+    #     #     return reduceNum(sum)
+    #     # else:
+    #     #     return sum
+    reduceNum(care)
     # (1 done) take in the str and find the element within the dictionery keys
     # (2 done) from the keys, add the value to the sum
     # (3) if the sum is greater than 9 then execute the digital reducer
