@@ -18,24 +18,24 @@
 
 
 
-//
-// function removeDupArr(arr){
-// let input =arr.sort() // n log n
-// let output=[]; //collection
-// for (i=0; i < input.length; i++){ // for Loop w O(n)
-//   if(input[i] !== input [i+1]){ // comparsion indexing O(1)
-//     output.push(input[i])  // insert O(1)
-//   }
-// } // iteration: O(n) * O(1) = O(n)
-//   return output
-// }
-//
 
 function removeDupArr(arr){
-  let me = new Set(arr)
-  let output= Array.from(me)
+let input =arr.sort() // n log n
+let output=[]; //collection
+for (i=0; i < input.length; i++){ // for Loop w O(n)
+  if(input[i] !== input [i+1]){ // comparsion indexing O(1)
+    output.push(input[i])  // insert O(1)
+  }
+} // iteration: O(n) * O(1) = O(n)
   return output
 }
 
-console.log(removeDupArr([5,3,2,3,4,5,1,4,78,43,23,23]))
+
+// function removeDupArr(arr){
+//   let me = new Set(arr)
+//   output = Array.from(me)
+//   return output
+// }
+
+console.log(removeDupArr([6,6,3,6,1,1,2,3,3,4,3,4,6,'a','b','b','abbey,','a']))
 // node june11.js
