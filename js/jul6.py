@@ -27,6 +27,6 @@ def get_grade(s1,s2,s3):
         return 'D'
     if 0 <=avgGrade<= 60:
         return 'F'
-res = get_grade(95,90,93) #calling a function, taking in two input
+res = get_grade(98,65,79) #calling a function, taking in two input
 print(res)
 # python jul6.py
