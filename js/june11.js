@@ -31,11 +31,11 @@ for (i=0; i < input.length; i++){ // for Loop w O(n)
 }
 
 
-// function removeDupArr(arr){
-//   let me = new Set(arr)
-//   output = Array.from(me)
-//   return output
-// }
+function removeDupArr(arr){
+  let me = new Set(arr)
+  output = Array.from(me)
+  return output
+}
 
 console.log(removeDupArr([6,6,3,6,1,1,2,3,3,4,3,4,6,'a','b','b','abbey,','a']))
 // node june11.js
