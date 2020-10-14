@@ -7,6 +7,7 @@
 // add each element in reverse order
 // convert back to number
 //
+// https://www.codewars.com/kata/555bfd6f9f9f52680f0000c5/train/javascript 
 function reverseInt(int){
   let numStr=''
   let str = String(int)
