@@ -56,26 +56,38 @@
 //
 // }
 
-const isUnique = str => {
-  if(typeof(str) !== 'string'){
-      return 'invalid input'
-    }
-  if(str.length ===1){
-      return true
-    }else{
-      return countMap(str)
-    }
-}
+// const isUnique = str => {
+//   if(typeof(str) !== 'string'){
+//       return 'invalid input'
+//     }
+//   if(str.length ===1){
+//       return true
+//     }else{
+//       return countMap(str)
+//     }
+// }
+//
+// const charMap = str => {
+//   let countMap= {}
+//   for(let char of str.toUpperCase()){
+//     countMap[char] = countMap[char] + 1 || 1
+//     if (countMap[char] > 1){
+//       return false
+//     }
+//   }
+//   return true
+// }
 
-const charMap = str => {
-  let countMap= {}
-  for(let char of str.toUpperCase()){
-    countMap[char] = countMap[char] + 1 || 1
-    if (countMap[char] > 1){
-      return false
-    }
-  }
-  return true
+const isUnique = str => {
+    if(typeof(str) !== 'string'){
+        return 'invalid input'
+      }
+    if(str.length ===1){
+        return true
+      }else{
+        let check = new Set(str).size
+        return check === str.length
+}
 }
 
 console.log('test 1',isUnique('abeyb'),'Expected: false')
