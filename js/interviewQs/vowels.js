@@ -5,4 +5,4 @@ for(vowel of vowels){
     count = count +1
   }
 }
-consto
+console.log
