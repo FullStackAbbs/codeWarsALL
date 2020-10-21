@@ -25,7 +25,7 @@ function anagrams(arr){
       }
     }
     // console.log(arr)
-    function buildCharMap(str){
+  function buildCharMap(str){
       const charMap={}
       for(let char of str.toLowerCase().sort()){
         charMap[char] = charMap[char]+1 || 1
