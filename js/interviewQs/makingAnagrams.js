@@ -12,50 +12,35 @@
 // check what chacrters and their value are not in stringB
 // // if so add the value of the to the deltion count
 // return the deltion count
+//
+// Example Stacy Sully
+// str1 stacy str2 Sully
+// larger stacy --> {s:0 t:1 a:1 c:1 y:0}
+// counter = 2 (similar letter/char )
 
 
-const makingAnagrams = (str1,str2) =>{
 
 
-
-
-
-// check which string is bigger
-  // if itd in common push it and gets its length
-  // smallerDiff = (small=length) - whats in common
-  // largerDiff = (larger length ) - whats in inCommon
-  // smaller + larger
-  const buildCharMap = str =>{
-    let charMap={}
-    for(let char of str){
-      charMap[char] = charMap[char] + 1 || 1
+const createCharMap = str => {
+    const charMap = {};
+    for(let char of str) {
+        charMap[char] = charMap[char] + 1 || 1;
     }
-  return charMap
-  }
-
-
-const charMapA = buildCharMap(str1)
-const charMapB = buildCharMap(str2)
-let deleteNeed =0
-let del = [];
-
-for(let char in charMapA){
-  if ( charMapA[char] !== charMapB[char]){
-    deleteNeed += charMapA[char]
-    del.push(Object.)
-  }
+    return charMap;
 }
-// for(let char in charMapB){
-//   if (charMapB[char] !== charMapA[char]){
-//     deleteNeed += charMapB[char]
-//   }
-// }
-
-return del
-
-
+const makingAnagrams = (str1, str2) => {
+    const larger = str1.length >= str2.length ? str1 : str2;
+    const smaller = str1.length < str2.length ? str1 : str2;
+    const charMap = createCharMap(larger);
+    let counter = 0;
+    for(let char of smaller) { //    Y
+        if(charMap[char] && charMap[char] > 0) {
+            charMap[char]--;
+            counter++;
+        }
+    }
+    const diffOfSmaller = (smaller.length - counter); // 5 - 2 = 3 ull
+    const diffOfLarger = (larger.length - counter); // 5 - 2 = 3 tac
+    return diffOfSmaller + diffOfLarger; // 6
 }
-console.log('test 1',makingAnagrams('cde','abc'),4)
-console.log('test 2',makingAnagrams('absdjkvuahdakejfnfauhdsaavasdlkj','djfladfhiawasdkjvalskufhafablsdkashlahdfa'),19)
-
 // node makingAnagrams.js
