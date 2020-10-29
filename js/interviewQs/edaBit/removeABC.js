@@ -25,12 +25,25 @@ const removeABC = str => {
   if(str.length === 0){
     return null
   }
+const newStr = str.replace(/[a-c]/gi,'')
+  if( str.length === newStr.length){
+    return null
+  }
+return newStr
 
-for (let i=0; i<str.length; i++){
-  const letter = ['a','b','c']
-  if(['a'])
-}
+// for (let i=0; i<str.length; i++){
+//   if( removeLetters.includes(str[i])){
+//
+//     console.log(newStr)
+//
+//
+//
+//   }
+//
+// }
 }
 console.log('test1',removeABC("This might be a bit hard"), "This might e  it hrd")
+console.log('test5',removeABC("abcabbeyabbc"), "ey")
+
 console.log('test2',removeABC("hello world!"), null)
 console.log('test3',removeABC(""), null)
