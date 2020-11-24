@@ -48,31 +48,30 @@ const food = {
 
 
 class Solution {
-    constructor(choice){ 
+    constructor(knives,food,choice){
+      this.knives=knives
+      this.food = food
       this.choice = choice
     }
-  
-    findKnife(psiSliceSelected){
-      console.log(psiSliceSelected)
-    }
+reportKnife(result,choice){
+  console.log( `You have selected ${this.choice} from the food list.The knife you will need is a ${result[0].name} and can be found in the knife drawer at location ${result[0].location}. Enjoy!  `)
+}
+
+  findKnife(psiSliceSelected){
+    const tolerance = .15
+    const upBound = psiSliceSelected + tolerance
+    const lowBound = psiSliceSelected - tolerance
+    let result = knives.allknives.filter( el =>  lowBound < el.psi && upBound > el.psi)  
+    this.reportKnife(result)
+  }
 
   findOnFoodList(){
     let foodChoice = food.allfood.filter(el => el.name === this.choice)
     let psiSliceSelected = foodChoice[0].psiSlice
     this.findKnife(psiSliceSelected)
-
-
-    // FIND KNIFE
-    const tolerance = .15
-    const upBound = psiSliceSelected + tolerance
-    const lowBound = psiSliceSelected - tolerance
-
-    let result = knives.allknives.filter( el =>  lowBound < el.psi && upBound > el.psi)
-
-    // REPORT THE RESULTS
-    return ` You have selected ${this.choice} from the food list. The knife you will need is a ${result[0].name} and can be found in the knife drawer at location ${result[0].location}. Enjoy!`
-    console.log(upBound,result)
   }
+
+  
 
 
 
@@ -88,7 +87,7 @@ class Solution {
 
 
 
-console.log( new Solution(food,'Meat').findOnFoodList())
+console.log( new Solution(knives,food,'Meat').findOnFoodList())
 
 
 
