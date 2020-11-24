@@ -1,6 +1,6 @@
 const knives = {
   allknives : [ {
-        name:'Butch Knives',
+        name:'Butch Knife',
         handle: 9.5,
         thickness: 11,
         psi: .8,
@@ -8,64 +8,89 @@ const knives = {
     
       },
      {
-        name:' Veggie Knives',
+        name:' Veggie Knife',
         handle: 9.5,
         thickness: 4.5,
         psi: .5,
         location: 'B2'
     
-      }]
-
+      },
+      {
+        name:' Butter Knife',
+        handle: 4,
+        thickness: 2.5,
+        psi: .1,
+        location: 'A1'
+    
+      }
+    
+    ]
 }
-const result = knives.allknives.filter( el => el.psi < .7)
 
-function ResultKnives(result) {
-  constructor(result)
-    this.result = result
-    this.result.location = WebGLUniformLocation
+const food = {
+  allfood : [ {
+        name:'Butter',
+        psiSlice: .15
+    
+      },
+     {
+      name:'Meat',
+      psiSlice: .8
+      },
+      {
+        name:'Onions',
+        psiSlice: .56
+    
+      }
+    ]
+}
+
+
+
+class Solution {
+    constructor(choice){ 
+      this.choice = choice
+    }
+  
+    findKnife(psiSliceSelected){
+      console.log(psiSliceSelected)
+    }
+
+  findOnFoodList(){
+    let foodChoice = food.allfood.filter(el => el.name === this.choice)
+    let psiSliceSelected = foodChoice[0].psiSlice
+    this.findKnife(psiSliceSelected)
+
+
+    // FIND KNIFE
+    const tolerance = .15
+    const upBound = psiSliceSelected + tolerance
+    const lowBound = psiSliceSelected - tolerance
+
+    let result = knives.allknives.filter( el =>  lowBound < el.psi && upBound > el.psi)
+
+    // REPORT THE RESULTS
+    return ` You have selected ${this.choice} from the food list. The knife you will need is a ${result[0].name} and can be found in the knife drawer at location ${result[0].location}. Enjoy!`
+    console.log(upBound,result)
+  }
+
+
+
+// find out what the user choose
+// match the choice text with food list
+// access the food list I need to grab the food psi Slice
+// filter the knife selection based on the foodPsislice matching the knives.psi value
+// return the location of the knife with the correct psi value
+
   
 
-    this.report = function(result){
-    result.forEach((el) => {
-      console.log('The knife you are looking for is here:'+ el.location)
-    })
-  }
 }
 
-console.log(ResultKnives(result))
 
 
-// for(let i=0;i<knives.allknives.length;i++){
-//   if(knives.allknives[i].psi < .7){
-//    console.log(knives.allknives[i].location)
-//   }
-// }
-// NOTE: wanted to consider a striaghtforward apporoach
+console.log( new Solution(food,'Meat').findOnFoodList())
 
-// NOTE: this particular solution only allows for one entry, consider create a constructor function 
-
-
-
-// create another object that includes foods from a select list
-// console.log(knives.allknives[1])
 
 
 // node knives.js
 
-// ,
-//    {
-//     name:'Butch Knives',
-//     handle: 9.5,
-//     thickness: 11,
-//     psi: .8,
-//     location: 'B1'
-
-//   },
-//  {
-//     name:' Veggie Knives',
-//     handle: 9.5,
-//     thickness: 4.5,
-//     psi: .5,
-//     location: 'B2'
-
-//   }
