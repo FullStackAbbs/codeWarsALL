@@ -45,24 +45,23 @@ const food = {
     ]
 }
 
-
-
 class Solution {
     constructor(knives,food,choice){
       this.knives=knives
       this.food = food
       this.choice = choice
     }
-reportKnife(result,choice){
-  console.log( `You have selected ${this.choice} from the food list.The knife you will need is a ${result[0].name} and can be found in the knife drawer at location ${result[0].location}. Enjoy!  `)
-}
+  reportKnife(result,choice){
+  const msg = `You have selected ${this.choice} from the food list.The knife you will need is a ${result[0].name} and can be found in the knife drawer at location ${result[0].location}. Enjoy!  `
+  console.log(msg)
+  }
 
   findKnife(psiSliceSelected){
     const tolerance = .15
     const upBound = psiSliceSelected + tolerance
     const lowBound = psiSliceSelected - tolerance
     let result = knives.allknives.filter( el =>  lowBound < el.psi && upBound > el.psi)  
-    this.reportKnife(result)
+    this.reportKnife(result,this.choice)
   }
 
   findOnFoodList(){
