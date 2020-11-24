@@ -57,9 +57,10 @@ class Solution {
   }
 
   findKnife(psiSliceSelected){
-    const tolerance = .15
-    const upBound = psiSliceSelected + tolerance
-    const lowBound = psiSliceSelected - tolerance
+    // psiSliceSelected (pounds per square inch) refers to the amount of pressure needed for a succesful cut
+    const tolerance = .15 // .15 psi range in order to find the correct knife
+    const upBound = psiSliceSelected + tolerance // the pressure need to make a cut while with tolerance range (high)
+    const lowBound = psiSliceSelected - tolerance // the pressure need to make a cut while with tolerance range (low)
     let result = knives.allknives.filter( el =>  lowBound < el.psi && upBound > el.psi)  
     this.reportKnife(result,this.choice)
   }
