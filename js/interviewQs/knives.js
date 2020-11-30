@@ -1,6 +1,6 @@
 const knives = {
   allknives : [ {
-        name:'Butch Knife',
+        name:'Cleaver',
         handle: 9.5,
         thickness: 11,
         psi: .8,
@@ -30,20 +30,58 @@ const knives = {
 const food = {
   allfood : [ {
         name:'Butter',
-        psiSlice: .15
+        psiSlice: .15,
+        spoilAge: 45,
+        currentAge: 3 // days
     
       },
      {
       name:'Meat',
-      psiSlice: .8
+      psiSlice: .8,
+      spoilAge: 7,
+      currentAge: 1
       },
       {
         name:'Onions',
-        psiSlice: .56
+        psiSlice: .56,
+        spoilAge: 10,
+        currentAge: 2 
     
       }
     ]
 }
+
+class Knife {
+  constructor(name,handle,thickness,psi,location){
+    this.name = name
+    this.handle = handle
+    this.thickness = thickness
+    this.psi = psi
+    this.location = location
+  }
+  cut(psi){
+    if(food.psiSlice < this.psi ){
+      return 'This cannot cut '
+
+    }
+    this.psi
+
+  }
+}
+
+let knife4 = new Knife('Boning Knife',3,7.5,1.24,'C1')
+console.log(knife4.cut())
+
+class Food {
+  constructor(name,psiSlice,spoilAge,currentAge){
+    this.name = name
+    this.psiSlice = psiSlice
+    this.spoilAge = spoilAge
+    this.currentAge =currentAge
+  }
+  isMoldy(spoilAge,currentAge){
+    this.currentAge > this.spoilAge ? true : false
+}}
 
 class Solution {
     constructor(knives,food,choice){
